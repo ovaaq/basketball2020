@@ -11,35 +11,105 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 
+import java.util.LinkedList;
+
 public class Controller {
 
     // import Labels from the panel.fxml file so we can edit those.
     @FXML
-    private Label HOME_FOULS;
+    private Label HOME_FOULS, HOME_TIMEOUTS;
     @FXML
-    private Label AWAY_FOULS;
+    private Label AWAY_FOULS, AWAY_TIMEOUTS;
     @FXML
-    private Label HOME_TIMEOUTS;
+    private Label SCORE, TIME, PERIOD;
     @FXML
-    private Label AWAY_TIMEOUTS;
+    private Label HOME_PLAYER_1_FOULS, HOME_PLAYER_2_FOULS, HOME_PLAYER_3_FOULS, HOME_PLAYER_4_FOULS, HOME_PLAYER_5_FOULS, HOME_PLAYER_6_FOULS, HOME_PLAYER_7_FOULS
+            , HOME_PLAYER_8_FOULS, HOME_PLAYER_9_FOULS, HOME_PLAYER_10_FOULS, HOME_PLAYER_11_FOULS, HOME_PLAYER_12_FOULS;
     @FXML
-    private Label SCORE;
+    private Label HOME_PLAYER_1_RED_FOUL, HOME_PLAYER_2_RED_FOUL, HOME_PLAYER_3_RED_FOUL, HOME_PLAYER_4_RED_FOUL, HOME_PLAYER_5_RED_FOUL, HOME_PLAYER_6_RED_FOUL
+            , HOME_PLAYER_7_RED_FOUL, HOME_PLAYER_8_RED_FOUL, HOME_PLAYER_9_RED_FOUL, HOME_PLAYER_10_RED_FOUL, HOME_PLAYER_11_RED_FOUL, HOME_PLAYER_12_RED_FOUL;
     @FXML
-    private Label HOME_PLAYER_1_FOULS;
+    private Label HOME_PLAYER_1_POINTS, HOME_PLAYER_2_POINTS, HOME_PLAYER_3_POINTS, HOME_PLAYER_4_POINTS, HOME_PLAYER_5_POINTS, HOME_PLAYER_6_POINTS
+            , HOME_PLAYER_7_POINTS, HOME_PLAYER_8_POINTS, HOME_PLAYER_9_POINTS, HOME_PLAYER_10_POINTS, HOME_PLAYER_11_POINTS, HOME_PLAYER_12_POINTS;
     @FXML
-    private Label HOME_PLAYER_1_RED_FOUL;
+    private Label HOME_PLAYER_1_NAME, HOME_PLAYER_2_NAME, HOME_PLAYER_3_NAME, HOME_PLAYER_4_NAME, HOME_PLAYER_5_NAME, HOME_PLAYER_6_NAME
+            , HOME_PLAYER_7_NAME, HOME_PLAYER_8_NAME, HOME_PLAYER_9_NAME, HOME_PLAYER_10_NAME, HOME_PLAYER_11_NAME, HOME_PLAYER_12_NAME;
     @FXML
-    private Label HOME_PLAYER_1_POINTS;
+    private Label HOME_PLAYER_1_NUMBER, HOME_PLAYER_2_NUMBER, HOME_PLAYER_3_NUMBER, HOME_PLAYER_4_NUMBER, HOME_PLAYER_5_NUMBER, HOME_PLAYER_6_NUMBER
+            , HOME_PLAYER_7_NUMBER, HOME_PLAYER_8_NUMBER, HOME_PLAYER_9_NUMBER, HOME_PLAYER_10_NUMBER, HOME_PLAYER_11_NUMBER, HOME_PLAYER_12_NUMBER;
     @FXML
-    private Label AWAY_PLAYER_1_POINTS;
+    private Label AWAY_PLAYER_1_POINTS, AWAY_PLAYER_2_POINTS, AWAY_PLAYER_3_POINTS, AWAY_PLAYER_4_POINTS, AWAY_PLAYER_5_POINTS, AWAY_PLAYER_6_POINTS
+            , AWAY_PLAYER_7_POINTS, AWAY_PLAYER_8_POINTS, AWAY_PLAYER_9_POINTS, AWAY_PLAYER_10_POINTS, AWAY_PLAYER_11_POINTS, AWAY_PLAYER_12_POINTS;
     @FXML
-    private Label AWAY_PLAYER_1_FOULS;
+    private Label AWAY_PLAYER_1_FOULS, AWAY_PLAYER_2_FOULS, AWAY_PLAYER_3_FOULS, AWAY_PLAYER_4_FOULS, AWAY_PLAYER_5_FOULS, AWAY_PLAYER_6_FOULS
+            , AWAY_PLAYER_7_FOULS, AWAY_PLAYER_8_FOULS, AWAY_PLAYER_9_FOULS, AWAY_PLAYER_10_FOULS, AWAY_PLAYER_11_FOULS, AWAY_PLAYER_12_FOULS;
     @FXML
-    private Label AWAY_PLAYER_1_RED_FOUL;
+    private Label AWAY_PLAYER_1_RED_FOUL, AWAY_PLAYER_2_RED_FOUL, AWAY_PLAYER_3_RED_FOUL, AWAY_PLAYER_4_RED_FOUL, AWAY_PLAYER_5_RED_FOUL, AWAY_PLAYER_6_RED_FOUL
+            , AWAY_PLAYER_7_RED_FOUL, AWAY_PLAYER_8_RED_FOUL, AWAY_PLAYER_9_RED_FOUL, AWAY_PLAYER_10_RED_FOUL, AWAY_PLAYER_11_RED_FOUL, AWAY_PLAYER_12_RED_FOUL;
     @FXML
-    private Label TIME;
+    private Label AWAY_PLAYER_1_NAME, AWAY_PLAYER_2_NAME, AWAY_PLAYER_3_NAME, AWAY_PLAYER_4_NAME, AWAY_PLAYER_5_NAME, AWAY_PLAYER_6_NAME
+            , AWAY_PLAYER_7_NAME, AWAY_PLAYER_8_NAME, AWAY_PLAYER_9_NAME, AWAY_PLAYER_10_NAME, AWAY_PLAYER_11_NAME, AWAY_PLAYER_12_NAME;
     @FXML
-    private Label PERIOD;
+    private Label AWAY_PLAYER_1_NUMBER, AWAY_PLAYER_2_NUMBER, AWAY_PLAYER_3_NUMBER, AWAY_PLAYER_4_NUMBER, AWAY_PLAYER_5_NUMBER, AWAY_PLAYER_6_NUMBER
+            , AWAY_PLAYER_7_NUMBER, AWAY_PLAYER_8_NUMBER, AWAY_PLAYER_9_NUMBER, AWAY_PLAYER_10_NUMBER, AWAY_PLAYER_11_NUMBER, AWAY_PLAYER_12_NUMBER;
+
+
+    private LinkedList<Label[]> home_player_list = new LinkedList<>();
+    private LinkedList<Label[]> away_player_list = new LinkedList<>();
+
+    Label[] hp1 = new Label[]{HOME_PLAYER_1_NUMBER, HOME_PLAYER_1_NAME, HOME_PLAYER_1_POINTS, HOME_PLAYER_1_FOULS, HOME_PLAYER_1_RED_FOUL};
+    Label[] hp2 = new Label[]{HOME_PLAYER_2_NUMBER, HOME_PLAYER_2_NAME, HOME_PLAYER_2_POINTS, HOME_PLAYER_2_FOULS, HOME_PLAYER_2_RED_FOUL};
+    Label[] hp3 = new Label[]{HOME_PLAYER_3_NUMBER, HOME_PLAYER_3_NAME, HOME_PLAYER_3_POINTS, HOME_PLAYER_3_FOULS, HOME_PLAYER_3_RED_FOUL};
+    Label[] hp4 = new Label[]{HOME_PLAYER_4_NUMBER, HOME_PLAYER_4_NAME, HOME_PLAYER_4_POINTS, HOME_PLAYER_4_FOULS, HOME_PLAYER_4_RED_FOUL};
+    Label[] hp5 = new Label[]{HOME_PLAYER_5_NUMBER, HOME_PLAYER_5_NAME, HOME_PLAYER_5_POINTS, HOME_PLAYER_5_FOULS, HOME_PLAYER_5_RED_FOUL};
+    Label[] hp6 = new Label[]{HOME_PLAYER_6_NUMBER, HOME_PLAYER_6_NAME, HOME_PLAYER_6_POINTS, HOME_PLAYER_6_FOULS, HOME_PLAYER_6_RED_FOUL};
+    Label[] hp7 = new Label[]{HOME_PLAYER_7_NUMBER, HOME_PLAYER_7_NAME, HOME_PLAYER_7_POINTS, HOME_PLAYER_7_FOULS, HOME_PLAYER_7_RED_FOUL};
+    Label[] hp8 = new Label[]{HOME_PLAYER_8_NUMBER, HOME_PLAYER_8_NAME, HOME_PLAYER_8_POINTS, HOME_PLAYER_8_FOULS, HOME_PLAYER_8_RED_FOUL};
+    Label[] hp9 = new Label[]{HOME_PLAYER_9_NUMBER, HOME_PLAYER_9_NAME, HOME_PLAYER_9_POINTS, HOME_PLAYER_9_FOULS, HOME_PLAYER_9_RED_FOUL};
+    Label[] hp10 = new Label[]{HOME_PLAYER_10_NUMBER, HOME_PLAYER_10_NAME, HOME_PLAYER_10_POINTS, HOME_PLAYER_10_FOULS, HOME_PLAYER_10_RED_FOUL};
+    Label[] hp11 = new Label[]{HOME_PLAYER_11_NUMBER, HOME_PLAYER_11_NAME, HOME_PLAYER_11_POINTS, HOME_PLAYER_11_FOULS, HOME_PLAYER_11_RED_FOUL};
+    Label[] hp12 = new Label[]{HOME_PLAYER_12_NUMBER, HOME_PLAYER_12_NAME, HOME_PLAYER_12_POINTS, HOME_PLAYER_12_FOULS, HOME_PLAYER_12_RED_FOUL};
+
+    Label[] ap1 = new Label[]{AWAY_PLAYER_1_NUMBER, AWAY_PLAYER_1_NAME, AWAY_PLAYER_1_POINTS, AWAY_PLAYER_1_FOULS, AWAY_PLAYER_1_RED_FOUL};
+    Label[] ap2 = new Label[]{AWAY_PLAYER_2_NUMBER, AWAY_PLAYER_2_NAME, AWAY_PLAYER_2_POINTS, AWAY_PLAYER_2_FOULS, AWAY_PLAYER_2_RED_FOUL};
+    Label[] ap3 = new Label[]{AWAY_PLAYER_3_NUMBER, AWAY_PLAYER_3_NAME, AWAY_PLAYER_3_POINTS, AWAY_PLAYER_3_FOULS, AWAY_PLAYER_3_RED_FOUL};
+    Label[] ap4 = new Label[]{AWAY_PLAYER_4_NUMBER, AWAY_PLAYER_4_NAME, AWAY_PLAYER_4_POINTS, AWAY_PLAYER_4_FOULS, AWAY_PLAYER_4_RED_FOUL};
+    Label[] ap5 = new Label[]{AWAY_PLAYER_5_NUMBER, AWAY_PLAYER_5_NAME, AWAY_PLAYER_5_POINTS, AWAY_PLAYER_5_FOULS, AWAY_PLAYER_5_RED_FOUL};
+    Label[] ap6 = new Label[]{AWAY_PLAYER_6_NUMBER, AWAY_PLAYER_5_NAME, AWAY_PLAYER_6_POINTS, AWAY_PLAYER_6_FOULS, AWAY_PLAYER_6_RED_FOUL};
+    Label[] ap7 = new Label[]{AWAY_PLAYER_7_NUMBER, AWAY_PLAYER_6_NAME, AWAY_PLAYER_7_POINTS, AWAY_PLAYER_7_FOULS, AWAY_PLAYER_7_RED_FOUL};
+    Label[] ap8 = new Label[]{AWAY_PLAYER_8_NUMBER, AWAY_PLAYER_7_NAME, AWAY_PLAYER_8_POINTS, AWAY_PLAYER_8_FOULS, AWAY_PLAYER_8_RED_FOUL};
+    Label[] ap9 = new Label[]{AWAY_PLAYER_9_NUMBER, AWAY_PLAYER_8_NAME, AWAY_PLAYER_9_POINTS, AWAY_PLAYER_9_FOULS, AWAY_PLAYER_9_RED_FOUL};
+    Label[] ap10 = new Label[]{AWAY_PLAYER_10_NUMBER, AWAY_PLAYER_9_NAME, AWAY_PLAYER_10_POINTS, AWAY_PLAYER_10_FOULS, AWAY_PLAYER_10_RED_FOUL};
+    Label[] ap11 = new Label[]{AWAY_PLAYER_11_NUMBER, AWAY_PLAYER_10_NAME, AWAY_PLAYER_11_POINTS, AWAY_PLAYER_11_FOULS, AWAY_PLAYER_11_RED_FOUL};
+    Label[] ap12 = new Label[]{AWAY_PLAYER_12_NUMBER, AWAY_PLAYER_11_NAME, AWAY_PLAYER_12_POINTS, AWAY_PLAYER_12_FOULS, AWAY_PLAYER_12_RED_FOUL};
+
+    public void fun () {
+        home_player_list.add(hp1);
+        home_player_list.add(hp2);
+        home_player_list.add(hp3);
+        home_player_list.add(hp4);
+        home_player_list.add(hp5);
+        home_player_list.add(hp6);
+        home_player_list.add(hp7);
+        home_player_list.add(hp8);
+        home_player_list.add(hp9);
+        home_player_list.add(hp10);
+        home_player_list.add(hp11);
+        home_player_list.add(hp12);
+        away_player_list.add(ap1);
+        away_player_list.add(ap2);
+        away_player_list.add(ap3);
+        away_player_list.add(ap4);
+        away_player_list.add(ap5);
+        away_player_list.add(ap6);
+        away_player_list.add(ap7);
+        away_player_list.add(ap8);
+        away_player_list.add(ap9);
+        away_player_list.add(ap10);
+        away_player_list.add(ap11);
+        away_player_list.add(ap12);
+    }
+
 
     //creating instances so we can access to our Game class
     private Team home = new Team("hupi-ukot");
@@ -47,12 +117,30 @@ public class Controller {
     private Board board = new Board(home, away);
     private Game GameTool = new Game(board);
 
+
+
     private Timeline timeline;
     private IntegerProperty timeSeconds = new SimpleIntegerProperty(100);
     private boolean isStarted = false;
     private boolean homeFoulsBusy = false;
     private boolean awayFoulsBusy = false;
     private boolean isTimeoutAlready = false;
+    private boolean onBreak = false;
+
+    public Controller() {
+        for (int i = 0; i <= 12; i = i + 1){
+            home_player_list.get(i)[0].setText(GameTool.getPlayerNumber(true, i));
+            home_player_list.get(i)[1].setText(GameTool.getPlayerName(true, i));
+            home_player_list.get(i)[2].setText(GameTool.getPlayerPoints(true, i));
+            home_player_list.get(i)[3].setText(GameTool.getPlayerFouls(true, i));
+            home_player_list.get(i)[4].setText(GameTool.getPlayerRedFoul(true, i));
+            away_player_list.get(i)[0].setText(GameTool.getPlayerNumber(false, i));
+            away_player_list.get(i)[1].setText(GameTool.getPlayerName(false, i));
+            away_player_list.get(i)[2].setText(GameTool.getPlayerPoints(false, i));
+            away_player_list.get(i)[3].setText(GameTool.getPlayerFouls(false, i));
+            away_player_list.get(i)[4].setText(GameTool.getPlayerRedFoul(false, i));
+        }
+    }
 
     /**
      * Listens keyboard and launches correct method.
@@ -79,7 +167,6 @@ public class Controller {
                 break;
             case O:
                 if (!isTimeoutAlready) {
-                    System.out.println("huhuu");
                     HOME_TIMEOUT();
                 }
                 break;
@@ -319,6 +406,12 @@ public class Controller {
         if ("RUNNING".equals(timeline.getStatus().toString())) {
             timeline.pause();
         } else {
+            if(onBreak){
+                GameTool.nextTimePeriod();
+                time_label_calculations();
+                START();
+                onBreak = false;
+            }
             timeline.play();
         }
     }
@@ -350,11 +443,16 @@ public class Controller {
             if (GameTool.getResetTeamFouls()) {
                 resetTeamFouls();
             }
-            GameTool.nextTimePeriod();
-            time_label_calculations();
-            START();
+            if(!GameTool.getIsBreakNext()) {
+                GameTool.nextTimePeriod();
+                time_label_calculations();
+                START();
+            } else {
+                onBreak = true;
+            }
+
             if (GameTool.getIsManual()) {
-                PAUSE();
+                timeline.pause();
             }
         });
     }
@@ -412,17 +510,38 @@ public class Controller {
         isTimeoutAlready = true;
         timeSeconds.setValue(GameTool.getTimeoutTime());
         PERIOD.setText("TIMEOUT");
+        timeline.playFromStart();
+        timeline.setOnFinished(e -> {
+            test();
+            isTimeoutAlready = false;
+            timeline_ending_checks();
+        });
+    }
+
+    private void test() {
+        timeSeconds.setValue(GameTool.getTimePeriodSeconds() - GameTool.getTmpDuration().toSeconds());
+        PERIOD.setText(GameTool.getLabel());
         timeline = new Timeline();
         timeline.getKeyFrames().add(
                 new KeyFrame(Duration.seconds(timeSeconds.intValue()),
                         new KeyValue(timeSeconds, 0)));
+    }
 
-        timeline.playFromStart();
+    /**
+     * Checks if timeouts or team fouls should be reset. Also sets next timePeriod to start manually if wanted.
+     */
+    private void timeout_ending_checks() {
         timeline.setOnFinished(e -> {
-            timeSeconds.setValue(GameTool.getTimePeriodSeconds() - GameTool.getTmpDuration().toSeconds());
-            PERIOD.setText(GameTool.getLabel());
-            timeline_ending_checks();
-            isTimeoutAlready = false;
+            if (GameTool.getResetTimeouts()) {
+                resetTimeous();
+            }
+            if (GameTool.getResetTeamFouls()) {
+                resetTeamFouls();
+            }
+            START();
+            if (GameTool.getIsManual()) {
+                PAUSE();
+            }
         });
     }
 

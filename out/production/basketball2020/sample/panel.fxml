@@ -887,12 +887,12 @@
                   </GridPane>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                      <children>
-                        <Label fx:id="TIME" alignment="CENTER" prefHeight="205.0" prefWidth="889.0" text="00:60" textFill="#f5f843">
+                        <Label fx:id="TIME" alignment="CENTER" prefHeight="205.0" prefWidth="889.0" text="00:10" textFill="#f5f843">
                            <font>
                               <Font name="College Condensed" size="220.0" />
                            </font>
                         </Label>
-                        <Label fx:id="PERIOD" alignment="CENTER" prefHeight="167.0" prefWidth="887.0" text="TIMEOUT" textFill="#f5f843">
+                        <Label fx:id="PERIOD" alignment="CENTER" prefHeight="167.0" prefWidth="887.0" text="" textFill="#f5f843">
                            <font>
                               <Font name="College Condensed" size="95.0" />
                            </font>
