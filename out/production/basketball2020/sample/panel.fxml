@@ -30,9 +30,9 @@
          <children>
             <GridPane prefHeight="567.0" prefWidth="1338.0" GridPane.rowIndex="1">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="35.0" prefWidth="250.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="30.0" prefWidth="571.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="35.0" prefWidth="250.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="38.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="36.0" prefWidth="571.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="38.0" prefWidth="250.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -42,8 +42,8 @@
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="113.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="69.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="166.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="67.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="220.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="50.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -61,7 +61,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="221.0" text="Fouls" textFill="#f5f843">
+                        <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="221.0" text="Fouls " textFill="#f5f843">
                            <font>
                               <Font name="College Condensed" size="55.0" />
                            </font>
@@ -203,218 +203,64 @@
                         </Label>
                         <Label fx:id="AWAY_PLAYER_1_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_12_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="12">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_11_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="11">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_10_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="10">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_9_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="9">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_8_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_7_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_6_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_5_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="5">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_4_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_3_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="AWAY_PLAYER_2_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL121" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS121" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL122" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS122" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL123" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS123" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL124" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS124" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL125" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS125" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL126" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS126" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL127" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS127" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL128" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS128" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL129" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS129" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL1210" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS1210" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
-                           <children>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL1211" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="113.0" textFill="RED">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="HOME_PLAYER_2_FOULS1211" maxWidth="140.0" prefHeight="61.0" prefWidth="178.0" textFill="#f5f843">
-                                 <font>
-                                    <Font name="System Bold" size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="1">
                            <children>
                               <Label fx:id="AWAY_PLAYER_1_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
@@ -429,6 +275,160 @@
                               </Label>
                            </children>
                         </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_2_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_2_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="11">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_11_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_11_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="10">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_10_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_10_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="9">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_9_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_9_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_8_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_8_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_7_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_7_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_5_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_5_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_6_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_6_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_4_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_4_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_3_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_3_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="155.0" GridPane.rowIndex="12">
+                           <children>
+                              <Label fx:id="AWAY_PLAYER_12_RED_FOUL" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AWAY_PLAYER_12_FOULS" alignment="CENTER_RIGHT" maxHeight="61.0" prefHeight="61.0" textFill="#f5f843">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <GridPane.margin>
                         <Insets bottom="20.0" left="40.0" />
@@ -436,8 +436,8 @@
                   </GridPane>
                   <GridPane>
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="67.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="166.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="220.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="69.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="113.0" />
                      </columnConstraints>
@@ -464,7 +464,7 @@
                         </Label>
                         <Label fx:id="HOME_PLAYER_1_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_1_NUMBER" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="1" textFill="#f5f843" GridPane.rowIndex="1">
@@ -492,7 +492,7 @@
                               <Font name="College Condensed" size="55.0" />
                            </font>
                         </Label>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="221.0" text="Fouls" textFill="#f5f843" GridPane.columnIndex="3">
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="221.0" text=" Fouls" textFill="#f5f843" GridPane.columnIndex="3">
                            <font>
                               <Font name="College Condensed" size="55.0" />
                            </font>
@@ -604,57 +604,57 @@
                         </Label>
                         <Label fx:id="HOME_PLAYER_2_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_3_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_4_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_5_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_6_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_7_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_8_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_9_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="9">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_10_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="10">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_12_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="12">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_11_NAME" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="I. Virtanen" textFill="#f5f843" GridPane.columnIndex="1" GridPane.rowIndex="11">
                            <font>
-                              <Font name="College Condensed" size="40.0" />
+                              <Font name="College Condensed" size="35.0" />
                            </font>
                         </Label>
                         <Label fx:id="HOME_PLAYER_2_POINTS" alignment="CENTER" prefHeight="26.0" prefWidth="221.0" text="0" textFill="#f5f843" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -747,7 +747,7 @@
                                     <Font name="System Bold" size="25.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL" prefHeight="62.0" prefWidth="113.0" textFill="RED">
+                              <Label fx:id="HOME_PLAYER_7_RED_FOUL" prefHeight="62.0" prefWidth="113.0" textFill="RED">
                                  <font>
                                     <Font name="System Bold" size="25.0" />
                                  </font>
@@ -761,7 +761,7 @@
                                     <Font name="System Bold" size="25.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="HOME_PLAYER_3_RED_FOUL3" prefHeight="62.0" prefWidth="113.0" textFill="RED">
+                              <Label fx:id="HOME_PLAYER_8_RED_FOUL" prefHeight="62.0" prefWidth="113.0" textFill="RED">
                                  <font>
                                     <Font name="System Bold" size="25.0" />
                                  </font>
@@ -932,7 +932,7 @@
                                     <Insets right="20.0" />
                                  </HBox.margin>
                               </Pane>
-                              <Pane maxWidth="1.7976931348623157E308" prefHeight="345.0" prefWidth="400.0">
+                              <Pane maxWidth="1.7976931348623157E308" prefHeight="345.0" prefWidth="333.0">
                                  <children>
                                     <Label fx:id="AWAY_TIMEOUTS" alignment="CENTER" layoutX="2.0" layoutY="64.0" prefHeight="85.0" prefWidth="258.0" textFill="#f5f843">
                                        <font>
@@ -978,11 +978,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="418.0" text="logo" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="49.0" />
-                     </font>
-                  </Label>
                   <HBox GridPane.columnIndex="1">
                      <children>
                         <Label fx:id="SCORE" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="246.0" prefWidth="705.0" text="0-0" textFill="#f5f843" HBox.hgrow="ALWAYS">

@@ -12,6 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         Parent root = FXMLLoader.load(getClass().getResource("panel.fxml"));
         primaryStage.setTitle("Basketball2020");
         Screen screen = Screen.getPrimary();

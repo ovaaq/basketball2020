@@ -5,7 +5,7 @@ public class Board {
     private Team homeTeam;
     private Team guestTeam;
     private int timeSeconds;
-    private int period;
+    private int currentTimePeriod;
     private int[] lastFoul = new int[2];
 
     public Board(Team homeTeam, Team guestTeam) {
@@ -13,7 +13,7 @@ public class Board {
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
         this.timeSeconds = 666;
-        this.period = 1;
+        this.currentTimePeriod = 0;
     }
 
     public sample.Team getHomeTeam() {
@@ -41,15 +41,15 @@ public class Board {
     }
 
     public int getPeriod() {
-        return period;
+        return currentTimePeriod;
     }
 
-    public void setPeriod(int period) {
-        this.period = period;
+    public void setPeriod(int currentTimePeriod) {
+        this.currentTimePeriod = currentTimePeriod;
     }
 
-    public void nextPeriod() {
-        this.period = period + 1;
+    public void nextTimePeriod() {
+        this.currentTimePeriod = currentTimePeriod + 1;
     }
 
     public int[] getLastFoul() {
