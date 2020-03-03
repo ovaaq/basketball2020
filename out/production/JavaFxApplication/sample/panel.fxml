@@ -952,7 +952,7 @@
                                        <font>
                                           <Font name="System Bold" size="25.0" />
                                        </font></Button>
-                                    <Button fx:id="HOME_TIMEOUT" layoutX="179.0" layoutY="158.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#HOME_TIMEOUT" prefHeight="30.0" prefWidth="45.0" style="-fx-text-fill: black; -fx-label-padding: -12;" text="+">
+                                    <Button fx:id="HOME_TIMEOUT" layoutX="193.0" layoutY="158.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#HOME_TIMEOUT" prefHeight="30.0" prefWidth="45.0" style="-fx-text-fill: black; -fx-label-padding: -12;" text="+">
                                        <font>
                                           <Font name="System Bold" size="25.0" />
                                        </font></Button>

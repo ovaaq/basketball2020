@@ -20,16 +20,23 @@ public class Calculations {
     public static void score_calculations(int points, boolean isHome, int xth_player, Game GameTool) {
         String[] scores = GameTool.SCORE.getValue().split("-", 5);
         xth_player = xth_player - 1;
+        int PlayerScore = Integer.parseInt(GameTool.getPlayerPoints(isHome, xth_player));
+
         if (isHome) {
             int homeScore = Integer.parseInt(scores[0]);
-            GameTool.setScore((homeScore + points) + "-" + scores[1]);
+            if(points + homeScore > -1 && PlayerScore + points > -1) {
+                GameTool.setScore((homeScore + points) + "-" + scores[1]);
+            }
         } else {
             int awayScore = Integer.parseInt(scores[1]);
-            GameTool.setScore(scores[0] + "-" + (awayScore + points));
+            if(points + awayScore > -1 && PlayerScore + points > -1) {
+                GameTool.setScore(scores[0] + "-" + (awayScore + points));
+            }
         }
-        int PlayerScore = Integer.parseInt(GameTool.getPlayerPoints(isHome, xth_player));
-        PlayerScore = PlayerScore + points;
-        GameTool.setPlayerPoints((Integer.toString(PlayerScore)),isHome, xth_player);
+        if(PlayerScore + points > -1) {
+            PlayerScore = PlayerScore + points;
+            GameTool.setPlayerPoints((Integer.toString(PlayerScore)), isHome, xth_player);
+        }
     }
 
 
@@ -53,16 +60,47 @@ public class Calculations {
                     GameTool.AWAY_FOULS.setValue(Integer.toString(tmp));
                 }
             }
-            if (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() < 4) {
-                yellow_foul_set(indexOfPlayer, isHome, GameTool);
-            } else if (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() == 4 && GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() < 1) {
-                red_foul_set(indexOfPlayer, isHome, GameTool);
+            if(-1 < xth_player && xth_player < 12) {
+                if (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() < 4) {
+                    yellow_foul_set(indexOfPlayer, isHome, GameTool);
+                } else if (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() == 4 && GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() < 1) {
+                    red_foul_set(indexOfPlayer, isHome, GameTool);
+                }
             }
 
 
 
         } else {
-            // vähentäminen
+            int tmp;
+            tmp = Integer.parseInt(GameTool.getTeamFouls(isHome)) - 1;
+
+            if (isHome) {
+                if(tmp >= 0) {
+                    GameTool.HOME_FOULS.setValue(Integer.toString(tmp));
+                }
+            } else {
+                if(tmp >= 0) {
+                    GameTool.AWAY_FOULS.setValue(Integer.toString(tmp));
+                }
+            }
+            boolean isYellow;
+
+            if (GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() == 1) {
+                isYellow = false;
+            } else {
+                isYellow = true;
+            }
+            if (-1 < xth_player && xth_player < 12) {
+
+                if (isYellow) {
+                    int last = (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() - 1);
+                    GameTool.setPlayerFouls((GameTool.getPlayerFouls(isHome, indexOfPlayer).substring(0, last)), isHome, indexOfPlayer);
+                } else {
+                    int last = (GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() - 1);
+                    GameTool.setPlayerRedFoul((GameTool.getPlayerFouls(isHome, indexOfPlayer).substring(0, last)), isHome, indexOfPlayer);
+
+                }
+            }
         }
     }
 
@@ -129,8 +167,30 @@ public class Calculations {
         }
     }
 
-    private static void substract_personal_foul(boolean isYellow, int indexOfPlayer, boolean isHome, Game GameTool) {
+    public static void substract_personal_foul(boolean isYellow, int indexOfPlayer, boolean isHome, Game GameTool) {
 
+        if(isYellow) {
+            int last = (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() - 1);
+            if(last > -1) {
+                GameTool.setPlayerFouls((GameTool.getPlayerFouls(isHome, indexOfPlayer).substring(0, last)), isHome, indexOfPlayer);
+            }
+        } else {
+            int last = (GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() - 1);
+            if(last > -1) {
+                GameTool.setPlayerRedFoul((GameTool.getPlayerFouls(isHome, indexOfPlayer).substring(0, last)), isHome, indexOfPlayer);
+            }
+
+        }
+    }
+
+    public static void substract_personal_foul_any(int indexOfPlayer, boolean isHome, Game GameTool) {
+        boolean isYellow;
+
+        if(GameTool.getPlayerRedFoul(isHome, indexOfPlayer).length() == 1) {
+            isYellow = false;
+        } else {
+            isYellow = true;
+        }
         if(isYellow) {
             int last = (GameTool.getPlayerFouls(isHome, indexOfPlayer).length() - 1);
             GameTool.setPlayerFouls((GameTool.getPlayerFouls(isHome, indexOfPlayer).substring(0, last)), isHome, indexOfPlayer);
@@ -140,5 +200,31 @@ public class Calculations {
 
         }
     }
+
+    public static void alternate_timeouts(boolean isAdding, boolean isHome, Game GameTool) {
+        String tmp = "●";
+
+        if(isAdding){
+            if(isHome){
+                if(GameTool.HOME_TIMEOUTS.getValue().length() < GameTool.getSettings().getAikalisaLkm()) {
+                    GameTool.HOME_TIMEOUTS.setValue(GameTool.HOME_TIMEOUTS.getValue() + tmp);
+                }
+            } else {
+                if(GameTool.AWAY_TIMEOUTS.getValue().length() < GameTool.getSettings().getAikalisaLkm()) {
+                    GameTool.AWAY_TIMEOUTS.setValue(GameTool.AWAY_TIMEOUTS.getValue() + tmp);
+                }
+            }
+        } else {
+            if(isHome && GameTool.HOME_TIMEOUTS.getValue().length() > 0){
+                int last = (GameTool.HOME_TIMEOUTS.getValue().length() - 1);
+                GameTool.HOME_TIMEOUTS.setValue(GameTool.HOME_TIMEOUTS.getValue().substring(0, last));
+            } else if( GameTool.AWAY_TIMEOUTS.getValue().length() > 0) {
+                int last = (GameTool.AWAY_TIMEOUTS.getValue().length() - 1);
+                GameTool.AWAY_TIMEOUTS.setValue(GameTool.AWAY_TIMEOUTS.getValue().substring(0, last));
+
+            }
+        }
+    }
+
 
 }

@@ -1,16 +1,31 @@
 package sample;
-
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.*;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.LinkedList;
 
+
+
 public class Controller {
+
 
     // USEFULL FOR FORMATTING TIME
     Generator generator = new Generator();
@@ -30,7 +45,7 @@ public class Controller {
             new String[]{"", ""}};
 
     // DUMMY SETTINGS
-    private Settings settings = new Settings(70, 4, 10, 10, 20, 5, 3, 1, 1, 5, 1, 1, false, 10);
+    private Settings settings = new Settings(70, 4, 10, 10, 20, 5, 3, 1, 1, 5, 1, 1, true, 10);
 
     private LinkedList<String> player = new LinkedList<>();
     private Game GameTool = new Game(board, settings, home_players_info, away_players_info);
@@ -82,6 +97,8 @@ public class Controller {
      * Binds every Label to StringProperty of Game instance.
      */
     public void initialize() {
+
+
 
         TIME.textProperty().bind(generator.getTimeFormat(GameTool.timeMillis, !GameTool.getPeriodInfo().isBreak(), GameTool));
 
@@ -230,6 +247,680 @@ public class Controller {
         AWAY_PLAYER_12_NUMBER.textProperty().bind(GameTool.AWAY_PLAYER_12_NUMBER);
     }
 
+
+    /**
+     * Decreases home player's score by 1
+     */
+
+    public void HOME_PLAYER_1_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 1, GameTool);
+
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_1_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 1, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_2_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 2, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_2_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 2, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_3_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 3, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_3_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 3, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_4_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 4, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_4_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 4,GameTool);
+    }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_5_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 5, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_5_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 5, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_6_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 6, GameTool);
+    }
+
+    public void HOME_PLAYER_6_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 6, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_7_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 7, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_7_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 7, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_8_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 8, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_8_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 8, GameTool); }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_9_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 9, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_9_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 9, GameTool );}
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_10_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 10, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_10_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 10, GameTool);
+    }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_11_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 11, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_11_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 11, GameTool);
+    }
+    /**
+     * Decreases home player's score by 1
+     */
+    public void HOME_PLAYER_12_POINTSMINUS() {
+        Calculations.score_calculations(-1, true, 12, GameTool);
+    }
+    /**
+     * Increases home player's score by 1
+     */
+    public void HOME_PLAYER_12_POINTSPLUS() {
+        Calculations.score_calculations(1, true, 12, GameTool);
+    }
+
+
+
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_1_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 1, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_1_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 1, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_2_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 2, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_2_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 2, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_3_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 3, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_3_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 3, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_4_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 4, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_4_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 4, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_5_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 5, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_5_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 5, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_6_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 6, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_6_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 6, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_7_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 7, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_7_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 7, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_8_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 8, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_8_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 8,GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_9_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 9, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_9_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 9,GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_10_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 1, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_10_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 10, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_11_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 1, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_11_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 11, GameTool);
+    }
+
+    /**
+     * Decreases away player's score by 1
+     */
+    public void AWAY_PLAYER_12_POINTSMINUS() {
+        Calculations.score_calculations(-1, false, 1, GameTool);
+    }
+
+
+    /**
+     * Increases away player's score by 1
+     */
+    public void AWAY_PLAYER_12_POINTSPLUS() {
+        Calculations.score_calculations(1, false, 12, GameTool);
+    }
+
+
+
+
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_1_FOULSPLUS() {
+
+       Calculations.foul_calculations(true,true,1, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_1_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,1,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_2_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,2, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_2_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,2,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_3_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,3, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_3_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,3,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_4_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,4, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_4_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,4,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_5_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,5, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_5_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,5,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_6_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,6, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_6_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,6,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_7_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,7, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_7_FOULSMINUS(){
+        Calculations.foul_calculations(false,true,7,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_8_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,8, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_8_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,8,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_9_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,9, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_9_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,9,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_10_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,10, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_10_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,10,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_11_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,11, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_11_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,11,GameTool);
+    }
+    /**
+     * Increases home player's fouls by 1
+     */
+    public void HOME_PLAYER_12_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,true,12, GameTool);
+    }
+    /**
+     * Decreases home player's fouls by 1
+     */
+    public void HOME_PLAYER_12_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,true,12,GameTool);
+    }
+
+
+
+
+
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_1_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,1, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_1_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,1, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_2_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,2, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_2_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,2, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_3_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,3, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_3_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,3, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_4_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,4, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_4_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,4, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_5_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,5, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_5_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,5, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_6_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,6, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_6_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,6, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_7_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,7, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_7_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,7, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_8_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,8, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_8_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,8, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_9_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,9, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_9_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,9, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_10_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,10, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_10_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,10, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_11_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,11, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_11_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,11, GameTool);
+    }
+    /**
+     * Increases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_12_FOULSPLUS() {
+
+        Calculations.foul_calculations(true,false,12, GameTool);
+    }
+    /**
+     * Decreases away player's fouls by 1
+     */
+    public void AWAY_PLAYER_12_FOULSMINUS(){
+
+        Calculations.foul_calculations(false,false,12, GameTool);
+    }
+
+
+
+
+
+
+
+
+
+
     /**
      * Listens keyboard and launches correct method.
      *
@@ -302,6 +993,7 @@ public class Controller {
         // TO DO
         // SELVITÄ XTH_PLAYER CONTROLLERISSA
         Calculations.score_calculations(2, true, 8, GameTool);
+
     }
 
     /**
@@ -347,7 +1039,16 @@ public class Controller {
     public void HOME_FOUL() {
         // TO DO
         // SELVITÄ XTH_PLAYER CONTROLLERISSA
-        Calculations.foul_calculations(true,true, 1, GameTool);
+        Calculations.foul_calculations(true,true, -1, GameTool);
+    }
+
+    /**
+     * Decreases one foul to home team's fouls if limit is not yet met.
+     */
+    public void HOME_FOULMINUS() {
+        // TO DO
+        // SELVITÄ XTH_PLAYER CONTROLLERISSA
+        Calculations.foul_calculations(false,true, -1, GameTool);
     }
 
     /**
@@ -356,7 +1057,15 @@ public class Controller {
     public void AWAY_FOUL() {
         // TO DO
         // SELVITÄ XTH_PLAYER CONTROLLERISSA
-        Calculations.foul_calculations(true,false, 1, GameTool);
+        Calculations.foul_calculations(true,false, -1, GameTool);
+    }
+    /**
+     * Decreases one foul to away team's fouls if limit is not yet met.
+     */
+    public void AWAY_FOULMINUS() {
+        // TO DO
+        // SELVITÄ XTH_PLAYER CONTROLLERISSA
+        Calculations.foul_calculations(false,false, -1, GameTool);
     }
 
     /*
@@ -444,21 +1153,39 @@ public class Controller {
      * Starts home team's timeout instantly.
      */
     public void HOME_TIMEOUT() {
-        timeout_calculations(true);
+        Calculations.alternate_timeouts(true,true, GameTool);
     }
-
     /**
      * Starts away team's timeout instantly.
      */
     public void AWAY_TIMEOUT() {
-        timeout_calculations(false);
+        Calculations.alternate_timeouts(true,false, GameTool);
     }
+
+
+    /**
+     * Decreases timeout count for away team
+     */
+    public void AWAY_TIMEOUTMINUS() {
+        Calculations.alternate_timeouts(false,false, GameTool);
+    }
+
+    /**
+     * Decreases timeout count for home team
+     */
+
+    public void HOME_TIMEOUTMINUS() {
+        Calculations.alternate_timeouts(false,true, GameTool);
+    }
+
+
 
     /**
      * Adds timeout marker and initiates timeout if its correct to do so.
      *
      * @param isHome BOOLEAN: Is team home or not.
      */
+
     private void timeout_calculations(boolean isHome) {
         String tmp = "●";
         int count;
@@ -533,7 +1260,7 @@ public class Controller {
                         new KeyValue(GameTool.timeMillis, end)));
 
     }
-
+    
     /**
      * Reset both teams fouls.
      */
