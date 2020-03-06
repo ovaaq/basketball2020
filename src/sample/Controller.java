@@ -1,8 +1,15 @@
 package sample;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderImage;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -19,14 +26,18 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import javax.swing.*;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Optional;
 
+import com.google.gson.Gson;
 
 
 public class Controller {
 
-
+    Sound sound = new Sound();
+    Gson gson = new Gson();
     // USEFULL FOR FORMATTING TIME
     Generator generator = new Generator();
 
@@ -57,6 +68,8 @@ public class Controller {
 
     // import Labels from the panel.fxml file so we can edit those.
     @FXML
+    private GridPane mainGrid;
+    @FXML
     private Label HOME_FOULS, HOME_TIMEOUTS;
     @FXML
     private Label AWAY_FOULS, AWAY_TIMEOUTS;
@@ -71,6 +84,8 @@ public class Controller {
     @FXML
     private Label HOME_PLAYER_1_POINTS, HOME_PLAYER_2_POINTS, HOME_PLAYER_3_POINTS, HOME_PLAYER_4_POINTS, HOME_PLAYER_5_POINTS, HOME_PLAYER_6_POINTS
             , HOME_PLAYER_7_POINTS, HOME_PLAYER_8_POINTS, HOME_PLAYER_9_POINTS, HOME_PLAYER_10_POINTS, HOME_PLAYER_11_POINTS, HOME_PLAYER_12_POINTS;
+    @FXML
+    private JButton HOME_PLAYER_1_POINTSPLUS, HOME_PLAYER_2_POINTSPLUS, HOME_PLAYER_3_POINTSPLUS, HOME_PLAYER_4_POINTSPLUS;
     @FXML
     private Label HOME_PLAYER_1_NAME, HOME_PLAYER_2_NAME, HOME_PLAYER_3_NAME, HOME_PLAYER_4_NAME, HOME_PLAYER_5_NAME, HOME_PLAYER_6_NAME
             , HOME_PLAYER_7_NAME, HOME_PLAYER_8_NAME, HOME_PLAYER_9_NAME, HOME_PLAYER_10_NAME, HOME_PLAYER_11_NAME, HOME_PLAYER_12_NAME;
@@ -245,6 +260,46 @@ public class Controller {
         AWAY_PLAYER_10_NUMBER.textProperty().bind(GameTool.AWAY_PLAYER_10_NUMBER);
         AWAY_PLAYER_11_NUMBER.textProperty().bind(GameTool.AWAY_PLAYER_11_NUMBER);
         AWAY_PLAYER_12_NUMBER.textProperty().bind(GameTool.AWAY_PLAYER_12_NUMBER);
+
+    }
+public void PLAYHORNPELIKELLO(){
+        sound.playHorn1(GameTool.getSettings().getPelikellonSummeri());
+}
+
+    public void PLAYHORNHEITOKELLO(){
+        sound.playHorn2(GameTool.getSettings().getHeittokellonSummeri());
+    }
+
+public void resetAlert(){
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Haluatko varmasti resetoida pelin?", ButtonType.YES, ButtonType.NO);
+    Optional<ButtonType> result = alert.showAndWait();
+    if(result.get()==ButtonType.YES){
+        GameTool.reset();
+        if(GameTool.getSettings().getKellonSuunta()){
+            GameTool.timeMillis.setValue(GameTool.getPeriodInfo().getSeconds()*1000L);
+        } else {
+            GameTool.timeMillis.setValue(0L);
+        }
+        timeline.pause();
+    }
+
+}
+
+    /**
+     * Decreases home score by 1
+     */
+public void HOME_SCOREMINUS(){
+    Calculations.score_calculations(-1, true, -1, GameTool);
+
+}
+
+
+    /**
+     * Decreases away score by 1
+     */
+    public void AWAY_SCOREMINUS(){
+        Calculations.score_calculations(-1, false, -1, GameTool);
+
     }
 
 
@@ -252,15 +307,36 @@ public class Controller {
      * Decreases home player's score by 1
      */
 
-    public void HOME_PLAYER_1_POINTSMINUS() {
+    public void HOME_PLAYER_1_POINTSMINUS() throws IOException {
         Calculations.score_calculations(-1, true, 1, GameTool);
+        Border borderVisible = mainGrid.getBorder();
+        Border border2 = new Border((BorderImage) null);
+       System.out.println(borderVisible.getInsets());
+        System.out.println(borderVisible.getOutsets());
+
+        Insets testInsets = new Insets(13.0, 13.0, 13.0, 13.0);
+        BorderWidths testWidth = new BorderWidths(13);
+       // BorderImage image = new BorderImage(null,testWidth,testInsets,testWidth,true,null,null);
+       // Border border = new Border(image);
+
+
+        System.out.println(mainGrid.getBorder());
+       // gson.toJson(border2, new FileWriter("border"));
+
+       // Border border1 = new Border(image);
+       // mainGrid.setBorder(border1);
+
 
     }
     /**
      * Increases home player's score by 1
      */
     public void HOME_PLAYER_1_POINTSPLUS() {
-        Calculations.score_calculations(1, true, 1, GameTool); }
+        Calculations.score_calculations(1, true, 1, GameTool);
+        Border border = new Border((BorderImage) null);
+
+
+        ;}
     /**
      * Decreases home player's score by 1
      */
@@ -577,6 +653,7 @@ public class Controller {
     public void HOME_PLAYER_1_FOULSPLUS() {
 
        Calculations.foul_calculations(true,true,1, GameTool);
+
     }
     /**
      * Decreases home player's fouls by 1
@@ -931,7 +1008,10 @@ public class Controller {
         switch (event.getCode()) {
             case T:
                 HOME_1_POINT();
+                sound.playHorn2(GameTool.getSettings().getPelikellonSummeri());
                 break;
+
+
             case Y:
                 HOME_2_POINTS();
                 break;
@@ -976,6 +1056,8 @@ public class Controller {
             default:
         }
     }
+
+
 
     /**
      * Increases home team's score by 1 and adds one point to maker.
@@ -1092,6 +1174,7 @@ public class Controller {
      * Starts and creates the clock instance.
      */
     public void START() {
+
         long duration;
         long end;
         if(GameTool.getSettings().getKellonSuunta()){

@@ -20,20 +20,25 @@ public class Calculations {
     public static void score_calculations(int points, boolean isHome, int xth_player, Game GameTool) {
         String[] scores = GameTool.SCORE.getValue().split("-", 5);
         xth_player = xth_player - 1;
-        int PlayerScore = Integer.parseInt(GameTool.getPlayerPoints(isHome, xth_player));
+        int PlayerScore = -1;
+        if(xth_player > -1 && xth_player < 12){
+            PlayerScore = Integer.parseInt(GameTool.getPlayerPoints(isHome, xth_player));
+        }
+
 
         if (isHome) {
             int homeScore = Integer.parseInt(scores[0]);
-            if(points + homeScore > -1 && PlayerScore + points > -1) {
+            System.out.println((xth_player > 11 || xth_player < 0));
+            if(points + homeScore > -1 && (PlayerScore + points > -1 || (xth_player > 11 || xth_player < 0))) {
                 GameTool.setScore((homeScore + points) + "-" + scores[1]);
             }
         } else {
             int awayScore = Integer.parseInt(scores[1]);
-            if(points + awayScore > -1 && PlayerScore + points > -1) {
+            if(points + awayScore > -1 && (PlayerScore + points > -1 || (xth_player > 11 || xth_player < 0))) {
                 GameTool.setScore(scores[0] + "-" + (awayScore + points));
             }
         }
-        if(PlayerScore + points > -1) {
+        if(PlayerScore + points > -1 && xth_player > -1 && xth_player < 12) {
             PlayerScore = PlayerScore + points;
             GameTool.setPlayerPoints((Integer.toString(PlayerScore)), isHome, xth_player);
         }

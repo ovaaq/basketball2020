@@ -60,4 +60,8 @@ public class Board {
         this.lastFoul = lastFoul;
     }
 
+    public void reset(){
+        this.currentTimePeriod = 0;
+    }
+
 }

@@ -3,6 +3,7 @@ package sample;
 import javafx.beans.property.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Border;
 import javafx.util.Duration;
 
 import java.lang.reflect.Array;
@@ -15,11 +16,14 @@ public class Game {
     //public IntegerProperty timeSeconds;
     public LongProperty timeMillis;
     public LongProperty test;
+    private String[][] home_player_par;
+    private String[][] away_player_par;
 
 
 
     public Game(Board board, Settings settings, String[][] home_player_par, String[][] away_player_par){
-
+        this.home_player_par = home_player_par;
+        this.away_player_par = away_player_par;
         //timeSeconds = new SimpleIntegerProperty(100);
         timeMillis = new SimpleLongProperty(100);
         this.settings = settings;
@@ -75,6 +79,24 @@ public class Game {
 
     }
 
+    public Border getBorderVisible() {
+        return borderVisible;
+    }
+
+    public void setBorderVisible(Border borderVisible) {
+        this.borderVisible = borderVisible;
+    }
+
+    public Border getBorderInvisible() {
+        return borderInvisible;
+    }
+
+    public void setBorderInvisible(Border borderInvisible) {
+        this.borderInvisible = borderInvisible;
+    }
+
+    private Border borderVisible;
+    private Border borderInvisible;
     private Duration tmp_time = null;
 
     private Settings settings;
@@ -82,6 +104,7 @@ public class Game {
     private Board board;
 
     private LinkedList<PeriodInfo> periodInfo;
+
 
     public StringProperty HOME_FOULS = new SimpleStringProperty("0");
     public StringProperty HOME_TIMEOUTS = new SimpleStringProperty("");
@@ -248,6 +271,41 @@ public class Game {
     StringProperty[] ap10 = new StringProperty[]{AWAY_PLAYER_10_NUMBER, AWAY_PLAYER_10_NAME, AWAY_PLAYER_10_POINTS, AWAY_PLAYER_10_FOULS, AWAY_PLAYER_10_RED_FOUL};
     StringProperty[] ap11 = new StringProperty[]{AWAY_PLAYER_11_NUMBER, AWAY_PLAYER_11_NAME, AWAY_PLAYER_11_POINTS, AWAY_PLAYER_11_FOULS, AWAY_PLAYER_11_RED_FOUL};
     StringProperty[] ap12 = new StringProperty[]{AWAY_PLAYER_12_NUMBER, AWAY_PLAYER_12_NAME,AWAY_PLAYER_12_POINTS, AWAY_PLAYER_12_FOULS, AWAY_PLAYER_12_RED_FOUL};
+
+
+
+    public void reset() {
+        for (int i = 0; i < 12; i = i + 1) {
+
+            home_player_list.get(i)[0].setValue(home_player_par[i][0]);
+            home_player_list.get(i)[1].setValue(home_player_par[i][1]);
+            if("" != home_player_par[i][1]){
+                home_player_list.get(i)[2].setValue("0");
+            }
+            home_player_list.get(i)[3].setValue("");
+            home_player_list.get(i)[4].setValue("");
+
+            away_player_list.get(i)[0].setValue(away_player_par[i][0]);
+            away_player_list.get(i)[1].setValue(away_player_par[i][1]);
+            if("" != away_player_par[i][1]){
+                away_player_list.get(i)[2].setValue("0");
+            }
+            away_player_list.get(i)[3].setValue("");
+            away_player_list.get(i)[4].setValue("");
+        }
+        board.reset();
+
+        HOME_FOULS.setValue("0");
+        HOME_TIMEOUTS.setValue("");
+        AWAY_FOULS.setValue("0");
+        AWAY_TIMEOUTS.setValue("");
+        SCORE.setValue("0-0");
+        PERIOD.setValue("WAITING");
+
+    }
+
+
+
 
     public String getPlayerNumber(boolean isHome, int i) {
         if(isHome){

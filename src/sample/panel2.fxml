@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#KeyboardListener" prefHeight="1060.0" prefWidth="1718.0" style="-fx-background-color: black; -fx-text-base-color: #f5f843"  xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"  >
+<GridPane id="mainGrid" fx:id="mainGrid" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#KeyboardListener" prefHeight="1060.0" prefWidth="1718.0" style="-fx-background-color: black; -fx-text-base-color: #f5f843; -fx-border-style: solid; -fx-border-color: red; -fx-border-width: 13;" stylesheets="@panel2style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -976,10 +976,13 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="241.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                  <ImageView fx:id="logo" fitHeight="218.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2">
                      <image>
                         <Image url="@logo.jpg" />
                      </image>
+                     <GridPane.margin>
+                        <Insets top="16.0" />
+                     </GridPane.margin>
                   </ImageView>
                   <HBox GridPane.columnIndex="2">
                      <children>
@@ -990,10 +993,13 @@
                         </Label>
                      </children>
                   </HBox>
-                  <ImageView fitHeight="241.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                  <ImageView fitHeight="219.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                      <image>
                         <Image url="@logo.jpg" />
                      </image>
+                     <GridPane.margin>
+                        <Insets top="16.0" />
+                     </GridPane.margin>
                   </ImageView>
                </children>
             </GridPane>

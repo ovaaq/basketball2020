@@ -1,5 +1,8 @@
 .button{
-color: white;
-font-size: 50px;
+-fx-text-fill:#1B1918 ;
+
 }
 
+.label{
+-fx-font-family:"College Condensed";
+}
