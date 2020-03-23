@@ -28,7 +28,7 @@ public class Generator {
                 tmp.add(tmp_p);
                 tmp_period = tmp_period + 1;
             }else {
-                if(((settings.getNeljannesMaara() - 1) / 2) + 1 == i){
+                if(4 == i){
                     PeriodInfo tmp_p = new PeriodInfo(settings.getPitkaTauko(), true, i, "HALF TIME", true, true, true, false);
                     tmp.add(tmp_p);
                 } else {

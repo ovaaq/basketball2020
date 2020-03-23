@@ -20,6 +20,7 @@ public class Main extends Application {
 
 
             Controller controller = new Controller();
+            DisplayController displayController = new DisplayController();
 
             Font.loadFont(getClass().getResourceAsStream("College.ttf"), 14);
             FXMLLoader loader = new FXMLLoader(
@@ -60,6 +61,24 @@ public class Main extends Application {
             anotherScene.getRoot().requestFocus();
             anotherStage.setScene(anotherScene);
             anotherStage.show();
+
+
+            FXMLLoader loader3 = new FXMLLoader(
+                    getClass().getResource(
+                            "heittokello.fxml"
+                    )
+            );
+            loader3.setController(displayController);
+            Parent anotherRoot2 = loader3.load();
+
+
+            Stage anotherStage2 = new Stage();
+            Scene anotherScene2 = new Scene(anotherRoot2);
+            anotherScene2.getRoot().requestFocus();
+            anotherStage2.setScene(anotherScene2);
+            anotherStage2.show();
+
+
 
 
         }

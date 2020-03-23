@@ -446,4 +446,41 @@ public class Game {
     public void setScore(String s) {
         this.SCORE.setValue(s);
     }
+
+
+
+    public int playerNumberToXth(int playerNumber, boolean isHome){
+            if(playerNumber <0|| playerNumber>99){
+                return -5;
+            }
+        if(isHome){
+            for (int i = 0; i < home_player_list.size(); i++) {
+                System.out.println(home_player_list.get(i)[0].getValue());
+                if(Integer.toString (playerNumber).equals(home_player_list.get(i)[0].getValue())){
+                    return i + 1;
+                }
+            }
+        } else {
+            for (int i = 0; i < away_player_list.size(); i++) {
+                if(Integer.toString (playerNumber).equals(away_player_list.get(i)[0].getValue())){
+                    return i + 1;
+                }
+            }
+        }
+        return -5;
+    }
+
+
+    public boolean isScoreEven() {
+        String[] scores = SCORE.getValue().split("-", 5);
+        if(scores[0] == scores[1]){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
+
+
